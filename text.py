@@ -17,7 +17,7 @@ print(supreme + category + specificproduct.get_attribute("href"))
 driver.get(specificproduct.get_attribute("href"))
 
 
-specificProductColor = driver.find_element_by_css_selector()
+specificProductColor = driver.find_element_by_css_selector('[data-style-name="Black"]')
 print(supreme + category + specificProductColor.get_attribute("href"))
 driver.get(specificProductColor.get_attribute("href"))
 
