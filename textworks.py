@@ -31,6 +31,21 @@ count = 0
 print(datetime.datetime.now())
 driver.get(supreme + category)
 
+goButton = raw_input("Type y and hit enter if you are ready for SUPREME")
+print("you entered y") ,goButton
+
+driver.get(supreme + category)
+
+def finditem():
+    try:
+        specificproduct = driver.find_element_by_partial_link_text(productKeyword)
+    except:
+        print("could not find" + productKeyword)
+        driver.get(supreme + category)
+        finditem()
+
+finditem()
+
 specificproduct = driver.find_element_by.partial_link_text(productKeyword)
 print(supreme + category + specificproduct.get_attribute("href"))
 driver.get(specificproduct.get_attribute("href"))
@@ -101,5 +116,3 @@ print(datetime.datetime.now())
 time.sleep(5)
 
 driver.close()
-
-
